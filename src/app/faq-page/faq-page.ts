@@ -3,6 +3,7 @@ import { Question as Ques, Service } from '../services/service';
 import { map, Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { Question } from '../components/question/question';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 interface QuestionVm extends Ques {
   expand: boolean;
@@ -21,6 +22,7 @@ export class FaqPage {
 
   constructor() {
     this.questions$ = this.service.getQuestions().pipe(
+      takeUntilDestroyed(),
       map((qs) =>
         qs.map((q, i) => {
           return {

@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-question',
@@ -10,14 +10,20 @@ import { Component, input, signal } from '@angular/core';
     '[class]': "'flex flex-col gap-6 hover:cursor-pointer'",
   },
 })
-export class Question {
+export class Question implements OnInit {
   question = input.required<string>();
   answer = input.required<string>();
   expand = input<boolean>(false);
 
   protected _expand = signal<boolean>(false);
 
-  constructor() {
+  /**
+   * The `ngOnInit` method is called after the `ctor` and the first call of
+   * `ngOnChanges`.
+   * I intend to use this signal as the proxy var of the `expand` input, which
+   * is not writable.
+   */
+  ngOnInit(): void {
     this._expand.set(this.expand());
   }
 
