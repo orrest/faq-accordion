@@ -117,4 +117,25 @@
   :target {
     scroll-margin-block: 5ex;
   }
+
+  h1 {
+    font-size: clamp(2rem, 0.5687rem + 6.1069vw, 3.5rem);
+    font-weight: 700;
+    line-height: clamp(2.375rem, 0.7052rem + 7.1247vw, 4.125rem);
+    letter-spacing: 0;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
+    font-weight: 600;
+    line-height: clamp(1.125rem, 0.9461rem + 0.7634vw, 1.3125rem);
+    letter-spacing: 0;
+  }
+
+  p {
+    font-size: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
 }

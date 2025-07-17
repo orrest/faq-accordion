@@ -1,0 +1,29 @@
+<article
+  class="flex flex-col gap-6 bg-white rounded-lg p-6 w-[327px] sm:w-[600px] mt-40 sm:rounded-2xl sm:p-10 drop-shadow-2xl"
+>
+  <header class="flex flex-row items-center gap-6">
+    <img
+      class="size-[21px] sm:size-[35px]"
+      src="./assets/images/icon-star.svg"
+      width="40"
+      height="41"
+      alt="icon star"
+    />
+    <h1 class="text-purple-950">FAQs</h1>
+  </header>
+
+  @if (questions$ | async; as questions) {
+    <section>
+      @for (q of questions; track $index) {
+        <app-question
+          [question]="q.question"
+          [answer]="q.answer"
+          [expand]="q.expand"
+        ></app-question>
+        @if (!$last) {
+          <hr class="my-6 border-purple-100" />
+        }
+      }
+    </section>
+  }
+</article>
