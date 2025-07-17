@@ -1,8 +1,9 @@
-<header
-  class="flex flex-row justify-between items-center"
+<button
+  class="flex flex-row justify-between items-center hover:cursor-pointer"
   tabindex="0"
   [attr.aria-expanded]="_expand()"
   (keydown.enter)="toggleExpand()"
+  (click)="onClick($event)"
 >
   <h3 class="text-purple-950 hover:text-violet-600">
     {{ question() }}
@@ -18,7 +19,7 @@
     height="31"
     [alt]="_expand() ? 'icon minus' : 'icon plus'"
   />
-</header>
+</button>
 
 @if (_expand()) {
   <p class="text-purple-600">

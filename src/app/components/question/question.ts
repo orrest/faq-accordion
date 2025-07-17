@@ -6,8 +6,7 @@ import { Component, input, OnInit, signal } from '@angular/core';
   templateUrl: './question.html',
   styleUrl: './question.css',
   host: {
-    '(click)': 'onClick($event)',
-    '[class]': "'flex flex-col gap-6 hover:cursor-pointer'",
+    '[class]': "'flex flex-col gap-6'",
   },
 })
 export class Question implements OnInit {
