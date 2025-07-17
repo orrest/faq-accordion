@@ -1,5 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400..700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-purple-950: #301534;
+  --color-purple-600: #8b6990;
+  --color-purple-100: #f8eeff;
+
+  --color-violet-600: #ad28eb;
+
+  --text-preset-1: 56px;
+  --text-preset-1--line-height: 66px;
+  --text-preset-1--letter-spacing: 0;
+  --text-preset-1--font-weight: 700;
+
+  --text-preset-2: 18px;
+  --text-preset-2--line-height: 21px;
+  --text-preset-2--letter-spacing: 0;
+  --text-preset-2--font-weight: 600;
+
+  --text-preset-3: 16px;
+  --text-preset-3--line-height: 24px;
+  --text-preset-3--letter-spacing: 0;
+  --text-preset-3--font-weight: 400;
+}
 
 @layer base {
   /* Box sizing rules */
@@ -7,6 +31,7 @@
   *::before,
   *::after {
     box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
   }
 
   /* Prevent font size inflation */
